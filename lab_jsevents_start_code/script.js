@@ -1,7 +1,8 @@
 const toDoForm = document.querySelector("#todo-form");
 const userInput = document.querySelector("#new-todo");
 const toDoList = document.querySelector("#list");
-
+const dateButton = document.querySelector("#show-date")
+const dateTime = document.querySelector("#date-time");
 
 
 userInput.addEventListener("input", (evt) => {
@@ -19,11 +20,15 @@ toDoForm.addEventListener("submit", (evt) => {
     toDoList.appendChild(newListItem);
     newListItem.appendChild(newDeleteButton);
 
-    newDeleteButton.addEventListener("click", (evt) => {
+    newDeleteButton.addEventListener("click", () => {
         newListItem.remove();
     });
 });
 
+dateButton.addEventListener("click", () => {
+    const currentDateTime = new Date();
+    dateTime.innerText = currentDateTime; 
+})
     
 
 
