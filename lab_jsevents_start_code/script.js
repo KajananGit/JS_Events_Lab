@@ -8,8 +8,9 @@ userInput.addEventListener("input", (evt) => {
 
 toDoForm.addEventListener("submit", (evt) => {
     evt.preventDefault();
+    console.log(evt.target["new-todo"].value);
     const newListItem = document.createElement("li");
-    newListItem.innerText = evt.target.value;
+    newListItem.innerText = evt.target["new-todo"].value;
     toDoList.appendChild(newListItem);
 });
 
