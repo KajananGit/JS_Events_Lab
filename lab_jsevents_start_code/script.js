@@ -2,6 +2,8 @@ const toDoForm = document.querySelector("#todo-form");
 const userInput = document.querySelector("#new-todo");
 const toDoList = document.querySelector("#list");
 
+
+
 userInput.addEventListener("input", (evt) => {
     console.log(evt);
 });
@@ -15,6 +17,15 @@ toDoForm.addEventListener("submit", (evt) => {
     newListItem.innerText = evt.target["new-todo"].value;
     newDeleteButton.appendChild(buttonText);
     toDoList.appendChild(newListItem);
-    toDoList.appendChild(newDeleteButton);
+    newListItem.appendChild(newDeleteButton);
+
+    newDeleteButton.addEventListener("click", (evt) => {
+        newListItem.remove();
+    });
 });
+
+    
+
+
+
 
